@@ -19,7 +19,15 @@ class ViewController: UIViewController {
         
         //who            what    value
         diceImageViewOne.image = #imageLiteral(resourceName: "DiceSix")
-        diceImageViewTwo.image  = #imageLiteral(resourceName: "DiceTwo")
+        diceImageViewTwo.image = #imageLiteral(resourceName: "DiceFour")
+        
     }
-
+    
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        
+        let diceArray = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
+        
+        diceImageViewOne.image = diceArray.randomElement()
+        diceImageViewTwo.image = diceArray[Int.random(in: 0...5)]
+    }
 }
